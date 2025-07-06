@@ -54,21 +54,23 @@ def execute():
         company_domain = req.data.get('company_domain', '')
         linkedin_url = req.data.get('linkedin_url', '')
         
-        # Validate required fields
-        if not first_name:
-            return Response.error(
-                error="First name is required"
-            )
-            
-        if not last_name:
-            return Response.error(
-                error="Last name is required"
-            )
-            
-        if not company and not company_domain:
-            return Response.error(
-                error="Either company name or company domain is required"
-            )
+        # Validate according to Clay logic:
+        # - Person Name is required when LinkedIn Profile is not given
+        # - Company Name is required when Company Domain is not given
+        
+        if not linkedin_url:
+            # LinkedIn not provided, so name is required
+            if not first_name or not last_name:
+                return Response.error(
+                    error="First name and last name are required when LinkedIn URL is not provided"
+                )
+        
+        if not company_domain:
+            # Company domain not provided, so company name is required
+            if not company:
+                return Response.error(
+                    error="Company name is required when company domain is not provided"
+                )
         
         # Extract enrichment options
         enrich_email = req.data.get('enrich_email_address', True)
