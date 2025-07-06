@@ -1,0 +1,3 @@
+module_settings:
+  module_name: "Enrich Lead (Sync)"
+  module_description: "Synchronously enrich a single lead with email and phone data. Automatically handles submission, polling, and result retrieval in one seamless operation. Timeout: 45 seconds."

@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "workflows_module_schema_version": "1.0.0"
+  },
+  "fields": [
+    {
+      "id": "connection",
+      "type": "connection",
+      "label": "BetterContact Connection",
+      "description": "Select your BetterContact API connection",
+      "validation": {
+        "required": true
+      },
+      "ui": {
+        "widget": "connection"
+      },
+      "connection_type": "api_key_bearer"
+    },
+    {
+      "id": "request_id",
+      "type": "string",
+      "label": "Request ID",
+      "description": "The request ID returned from the Enrich Leads module",
+      "validation": {
+        "required": true
+      },
+      "ui": {
+        "widget": "input",
+        "placeholder": "Enter the request ID from enrichment submission"
+      }
+    }
+  ]
+}

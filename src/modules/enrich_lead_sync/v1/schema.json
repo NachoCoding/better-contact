@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "workflows_module_schema_version": "1.0.0"
+  },
+  "fields": [
+    {
+      "id": "connection",
+      "type": "connection",
+      "label": "BetterContact Connection",
+      "description": "Select your BetterContact API connection",
+      "validation": {
+        "required": true
+      },
+      "ui": {
+        "widget": "connection"
+      },
+      "connection_type": "api_key_bearer"
+    },
+    {
+      "id": "first_name",
+      "type": "string",
+      "label": "First Name",
+      "description": "First name of the lead",
+      "validation": {
+        "required": true
+      },
+      "ui": {
+        "widget": "input",
+        "placeholder": "John"
+      }
+    },
+    {
+      "id": "last_name",
+      "type": "string",
+      "label": "Last Name",
+      "description": "Last name of the lead",
+      "validation": {
+        "required": true
+      },
+      "ui": {
+        "widget": "input",
+        "placeholder": "Doe"
+      }
+    },
+    {
+      "id": "company",
+      "type": "string",
+      "label": "Company",
+      "description": "Company name (required if company_domain not provided)",
+      "validation": {
+        "required": false
+      },
+      "ui": {
+        "widget": "input",
+        "placeholder": "Acme Corp"
+      }
+    },
+    {
+      "id": "company_domain",
+      "type": "string",
+      "label": "Company Domain",
+      "description": "Company domain (required if company not provided)",
+      "validation": {
+        "required": false
+      },
+      "ui": {
+        "widget": "input",
+        "placeholder": "example.com"
+      }
+    },
+    {
+      "id": "linkedin_url",
+      "type": "string",
+      "label": "LinkedIn URL",
+      "description": "LinkedIn profile URL",
+      "validation": {
+        "required": false
+      },
+      "ui": {
+        "widget": "input",
+        "placeholder": "https://linkedin.com/in/example"
+      }
+    },
+    {
+      "id": "enrich_email_address",
+      "type": "boolean",
+      "label": "Enrich Email Address",
+      "description": "Whether to enrich email addresses",
+      "validation": {
+        "required": false
+      },
+      "ui": {
+        "widget": "checkbox"
+      },
+      "default": true
+    },
+    {
+      "id": "enrich_phone_number",
+      "type": "boolean",
+      "label": "Enrich Phone Number",
+      "description": "Whether to enrich phone numbers",
+      "validation": {
+        "required": false
+      },
+      "ui": {
+        "widget": "checkbox"
+      },
+      "default": true
+    }
+  ]
+}
